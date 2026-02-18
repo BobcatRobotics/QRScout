@@ -12,7 +12,7 @@ const strokeStyle1 = {
 
 
 const strokeStyle2 = {
-  stroke: '#000000',
+  stroke: '#8e191c',
   strokeWidth: 1.8718,
   strokeDasharray: 'none',
   strokeOpacity: 1,
@@ -56,8 +56,6 @@ const style1 = {
 export function Logo() {
   return (
     <svg
-   width="200.845mm"
-   height="44.030998mm"
    viewBox="0 0 199.845 43.811769"
    version="1.1"
    id="svg1"
