@@ -1,36 +1,7 @@
-const defaultStyle = {
-  fill: '#ef3340',
-  fillOpacity: 1,
-};
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-const strokeStyle = {
-  stroke: '#000000',
-  strokeWidth: 0,
-};
-
-const style2 = {
-  ...defaultStyle,
-  fontSize: '74.7706px',
-  fontFamily: 'SF Sports Night',
-  ...strokeStyle,
-};
-
-const style3 = {
-  ...defaultStyle,
-  ...strokeStyle,
-  strokeDasharray: 'none',
-};
-
-const style4 = {
-  ...defaultStyle,
-  fontSize: '21.0016px',
-  fontFamily: 'SF Sports Night NS',
-  ...strokeStyle,
-};
-
-export function Logo() {
-  return ( 
-  <svg
+<svg
    width="200.845mm"
    height="44.030998mm"
    viewBox="-1 -18 200.845 44.030998"
@@ -147,5 +118,3 @@ export function Logo() {
          y="75.732933">ROBOTICS</tspan></text>
   </g>
 </svg>
-  );
-}
