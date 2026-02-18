@@ -3,10 +3,6 @@ const defaultStyle = {
   fill: '#8e191c',
   fillOpacity: 1,
 };
-const strokeStyle = {
-  stroke: '#000000',
-  strokeWidth: 0,
-};
 
 const strokeStyle1 = {
   stroke: '#000000',
@@ -55,18 +51,6 @@ const style1 = {
   fill: '#8e191c',
   fillOpacity: 1,
   ...strokeStyle1,
-};
-
-const style5 = {
-  ...defaultStyle,
-  ...strokeStyle,
-  strokeDasharray: 'none',
-};
-const style4 = {
-  ...defaultStyle,
-  fontSize: '21.0016px',
-  fontFamily: 'SF Sports Night NS',
-  ...strokeStyle,
 };
 
 export function Logo() {
