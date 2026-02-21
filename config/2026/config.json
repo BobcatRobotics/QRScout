@@ -176,8 +176,8 @@
                     "formResetBehavior": "reset"
                 },
                 { 
-                    "title": "Pickup Balls",
-                    "description": "Check if the robot picked up balls in Auto.",
+                    "title": "Pickup Fuel",
+                    "description": "Check if the robot picked up fuel in Auto.",
                     "type": "boolean",
                     "required": false,
                     "code": "AutoPickup",
@@ -232,11 +232,11 @@
                 {
                     "title": "Passed fuel during match?",
                     "description": "Did the robot pass fuel during the match?",
-                    "type": "select",
+                    "type": "multi-select",
                     "required": false,
                     "code": "fuelPassed",
                     "formResetBehavior": "reset",
-                    "defaultValue": "NA",
+                    "defaultValue": [],
                     "choices": {
                         "NA": "No passing",
                         "C": "Center",
@@ -320,26 +320,6 @@
                     }
                 },
                 {
-                    "title": "Comments (Eg: Penalties/Defense/Uniqueness)",
-                    "description": "Eg: Penalties/Defense/Uniqueness, etc.",
-                    "type": "text",
-                    "required": false,
-                    "code": "co",
-                    "formResetBehavior": "reset",
-                    "defaultValue": "",
-                    "min": 0,
-                    "max": 100
-                },
-                {
-                    "title": "Alliance won auto?",
-                    "description": "Did your alliance win the autonomous period?",
-                    "type": "boolean",
-                    "required": false,
-                    "code": "allianceWonAuto",
-                    "formResetBehavior": "reset",
-                    "defaultValue": false
-                },
-                {
                     "title": "Crossed into opposite zone?",
                     "description": "Did the robot cross into the opposing alliance's zone?",
                     "type": "boolean",
@@ -374,6 +354,20 @@
                     "code": "tipped",
                     "formResetBehavior": "reset",
                     "defaultValue": false
+                },
+                {
+                    "title": "Comments  (Eg:Penalty/Defense/Uniqueness)",
+                    "description": "Eg: Penalties/Defense/Uniqueness, etc.",
+                    "type": "text",
+                    "required": false,
+                    "code": "co",
+                    "formResetBehavior": "reset",
+                    "defaultValue": "",
+                    "min": 0,
+                    "max": 120,
+                    "width": 400,
+                    "height": 300,
+                    "rows": 6
                 }
             ]
         }
