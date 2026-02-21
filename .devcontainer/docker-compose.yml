@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
+    volumes:
+      - ../..:/workspaces:cached
+    ports:
+      - "5173:5173"
+    command: sleep infinity
