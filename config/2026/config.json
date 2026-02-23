@@ -4,7 +4,7 @@
     "delimiter": "\t",
     "teamNumber": 177,
     "floatingField": {
-        "show": false,
+        "show": true,
         "codeValue": "teamNumber"
     },
     "theme": {
@@ -148,11 +148,20 @@
                     "defaultValue": "No",
                     "choices": {
                         "No": "No Climb",
-                        "Out": "Output Side",
-                        "Mid": "Middle",
-                        "Dep": "Depot Side"
+                        "LS": "Left Side",
+                        "MD": "Middle",
+                        "RS": "Right Side"
                     }
-                },                
+                }, 
+                {
+                    "title": "Double Climbed in Auto",
+                    "description": "Check if the robots Climbed with another robot in Auto.",
+                    "type": "boolean",
+                    "required": false,
+                    "code": "doubleClimb",
+                    "formResetBehavior": "reset",
+                    "defaultValue": false
+                },
                 {
                     "title": "Scored in Auto",
                     "description": "Check if the robot scored in Auto.",
@@ -188,17 +197,17 @@
                     "title": "Pickup fuel from",
                     "description": "Fuel pickup from",
                     "type": "multi-select",
-                    "required": false,
+                    "required": true,
                     "code": "pickupfrom",
                     "choices": {
                         "0": "No Pickup",
                         "1": "Depot",
                         "2": "MidField",
-                        "3": "HP Zone",
+                        "3": "Human Player Zone",
                         "4": "Floor"
                     },
                     "formResetBehavior": "reset",
-                    "defaultValue": ["0"]
+                    "defaultValue": []
                 }                
             ]
         },
@@ -314,9 +323,9 @@
                     "defaultValue": "No",
                     "choices": {
                         "No": "No Climb",
-                        "Out": "Output Side",
-                        "Mid": "Middle",
-                        "Dep": "Depot Side"
+                        "LS": "Left Side",
+                        "MD": "Middle",
+                        "RS": "Right Side"
                     }
                 },
                 {
@@ -359,15 +368,12 @@
                     "title": "Comments  (Eg:Penalty/Defense/Uniqueness)",
                     "description": "Eg: Penalties/Defense/Uniqueness, etc.",
                     "type": "text",
-                    "required": false,
+                    "required": true,
                     "code": "co",
                     "formResetBehavior": "reset",
                     "defaultValue": "",
                     "min": 0,
-                    "max": 120,
-                    "width": 400,
-                    "height": 300,
-                    "rows": 6
+                    "max": 120
                 }
             ]
         }
