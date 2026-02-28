@@ -2,7 +2,7 @@
   "title": "QRScout-177",
   "page_title": "Rebuilt",
   "delimiter": "\t",
-  "teamNumber": 177,
+  "teamNumber": 1119,
   "floatingField": {
     "show": true,
     "codeValue": "teamNumber"
@@ -77,37 +77,20 @@
         {
           "title": "Match Number",
           "description": "Select the match number.",
-          "type": "text",
+                    "type": "TBA-match-number",
           "required": true,
           "code": "matchNumber",
-          "formResetBehavior": "preserve",
-          "defaultValue": "1"
-        },
-        {
-          "title": "Robot",
-          "description": "Select the robot number + corresponding color",
-          "type": "select",
-          "required": true,
-          "code": "robotIdentifier",
-          "formResetBehavior": "reset",
-          "defaultValue": "No",
-          "choices": {
-            "R1": "Red-1",
-            "R2": "Red-2",
-            "R3": "Red-3",
-            "B1": "Blue-1",
-            "B2": "Blue-2",
-            "B3": "Blue-3"
-          }
+                    "formResetBehavior": "increment",
+                    "defaultValue": 1
         },
         {
           "title": "Team and Robot",
           "description": "Select the team and robot position you are scouting.",
-          "type": "text",
+          "type": "TBA-team-and-robot",
           "required": true,
           "code": "robot",
           "formResetBehavior": "preserve",
-          "defaultValue": " "
+          "defaultValue": null
         },
         {
           "title": "Starting Position",
