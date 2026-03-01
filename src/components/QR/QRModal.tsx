@@ -19,7 +19,7 @@ export interface QRModalProps {
 export function QRModal(props: QRModalProps) {
   const fieldValues = useQRScoutState(state => state.fieldValues);
   const formData = useQRScoutState(state => state.formData);
-  const title = `Team ${getFieldValue('teamAndRobot').teamNumber} - ${getFieldValue('teamAndRobot').robotPosition} - M${getFieldValue(
+  const title = `Team ${getFieldValue('teamAndRobot')?.teamNumber} - ${getFieldValue('teamAndRobot')?.robotPosition} - M${getFieldValue(
     'matchNumber',
   )}`.toUpperCase();
 
