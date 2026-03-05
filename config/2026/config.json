@@ -77,11 +77,11 @@
         {
           "title": "Match Number",
           "description": "Select the match number.",
-                    "type": "TBA-match-number",
+          "type": "TBA-match-number",
           "required": true,
           "code": "matchNumber",
-                    "formResetBehavior": "increment",
-                    "defaultValue": 1
+          "formResetBehavior": "increment",
+          "defaultValue": 1
         },
         {
           "title": "Team and Robot",
@@ -101,13 +101,13 @@
           "formResetBehavior": "reset",
           "defaultValue": "H",
           "choices": {
-            "OT": "Outpost Side",
+            "OS": "Outpost Side",
             "OBFT": "Outpost Bump Favoring Trench",
             "OBFH": "Outpost Bump Favoring Hub",
-            "H": "Hub",
+            "Hub": "Hub",
             "DBFH": "Depot Bump Favoring Hub",
             "DBFT": "Depot Bump Favoring Trench",
-            "DT": "Depot Side"
+            "DS": "Depot Side"
           }
         },
         {
@@ -134,8 +134,8 @@
           "defaultValue": "NA",
           "choices": {
             "NA": "Not Attempted",
-            "Yes": "Successful Climb",
-            "No": "Unsuccessful Climb"
+            "Success": "Successful Climb",
+            "Failed": "Unsuccessful Climb"
           }
         },
         {
@@ -173,10 +173,11 @@
         },
         {
           "title": "Scoring Locations",
-          "type": "multi-select",
+          "type": "select",
           "required": true,
           "code": "scoringLocations",
           "formResetBehavior": "reset",
+          "defaultValue": "",
           "choices": {
             "NONE": "No Scoring",
             "STATIONARY": "While Stationary",
@@ -259,11 +260,11 @@
           "formResetBehavior": "reset",
           "defaultValue": [],
           "choices": {
-            "NA": "No passing",
-            "C": "Center",
-            "OP": "Opp Zone",
-            "S": "Scattered",
-            "I": "Intentional"
+            "No_Passing": "No passing",
+            "Center": "Center",
+            "Opp_Zone": "Opp Zone",
+            "Scattered": "Scattered",
+            "Intentional": "Intentional"
           }
         },
         {
