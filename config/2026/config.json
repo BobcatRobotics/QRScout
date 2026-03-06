@@ -324,7 +324,7 @@
           "required": false,
           "code": "TrenchRizz",
           "formResetBehavior": "reset",
-          "defaultValue": true
+          "defaultValue": false
         },
         {
           "title": "Played Defense?",
