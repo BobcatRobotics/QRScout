@@ -101,14 +101,24 @@
           "formResetBehavior": "reset",
           "defaultValue": "H",
           "choices": {
-            "OS": "Outpost Side",
-            "OBFT": "Outpost Bump Favoring Trench",
-            "OBFH": "Outpost Bump Favoring Hub",
-            "Hub": "Hub",
-            "DBFH": "Depot Bump Favoring Hub",
-            "DBFT": "Depot Bump Favoring Trench",
-            "DS": "Depot Side"
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6"
           }
+        },
+        {
+          "title": "Field Layout",
+          "description": "Reference diagram of the field",
+          "type": "image",
+          "required": false,
+          "code": "fieldLayout",
+          "formResetBehavior": "preserve",
+          "defaultValue": "https://i.imgur.com/XgLUU2O.jpeg",
+          "height": 300,
+          "alt": "2026 FRC Field Layout Diagram"
         },
         {
           "title": "No Show",
