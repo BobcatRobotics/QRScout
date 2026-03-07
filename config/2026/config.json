@@ -216,28 +216,66 @@
       "name": "Teleop",
       "fields": [
         {
-          "title": "Scoring Effectiveness",
-          "description": "Rate the robot's scoring effectiveness. 1: 0-20%. 2: 20-40%. 3: 40-60%. 4: 60-80%. 5: 80%-100%",
+          "title": "+1 Fuel Scored (ESTIMATE)",
+          "type": "counter",
+          "required": false,
+          "code": "fuel1",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "+5 Fuel Burst (ESTIMATE)",
+          "type": "counter",
+          "required": false,
+          "code": "fuel5",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "+10 Fuel Burst (ESTIMATE)",
+          "type": "counter",
+          "required": false,
+          "code": "fuel10",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "+25 Fuel Dump (ESTIMATE)",
+          "type": "counter",
+          "required": false,
+          "code": "fuel25",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "+35 Fuel Dump (ESTIMATE)",
+          "type": "counter",
+          "required": false,
+          "code": "fuel35",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "% Scoring Effectiveness",
+          "description": "Rate the approximate percent of fuel scored/attempted",
           "type": "range",
           "required": false,
           "code": "scoringEffe",
           "formResetBehavior": "reset",
-          "defaultValue": 3,
-          "min": 0,
-          "max": 5,
-          "step": 1
-        },
-        {
-          "title": "# of compeleted cycles",
-          "description": "How often robot deposited fuel in hub.",
-          "type": "range",
-          "required": false,
-          "code": "completedCycles",
-          "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
-          "max": 20,
-          "step": 1
+          "max": 100,
+          "step": 20
         },
         {
           "title": "Pickup Effectiveness",
@@ -280,6 +318,15 @@
           "step": 1
         },
         {
+          "title": "Trench Capability",
+          "description": "Check if the robot is able to go under the trench",
+          "type": "boolean",
+          "required": false,
+          "code": "TrenchRizz",
+          "formResetBehavior": "reset",
+          "defaultValue": false
+        },
+        {
           "title": "Played Defense?",
           "description": "Did the robot play defense during the match?",
           "type": "select",
@@ -290,7 +337,7 @@
           "choices": {
             "Yes": "Yes",
             "No": "No",
-            "NA": "Not Applicable"
+            "Attempt": "Attempted"
           }
         },
         {
