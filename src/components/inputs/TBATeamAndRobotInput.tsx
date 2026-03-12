@@ -16,9 +16,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
+import { isEmpty } from 'lodash';
 
 interface TBATeamAndRobotData {
-  teamNumber: number;
+  teamNumber: string;
   robotPosition: string;
 }
 
@@ -29,7 +30,8 @@ export default function TBATeamAndRobotInput(props: ConfigurableInputProps) {
   const matchData = useQRScoutState(state => state.matchData);
   const selectedMatchNumber = useQRScoutState(() => {
     const value = getFieldValue('matchNumber');
-    return typeof value === 'number' ? value : null;
+    return value;
+//    return typeof value === 'number' ? value : null;
   });
 
   if (!data) {
@@ -47,15 +49,19 @@ export default function TBATeamAndRobotInput(props: ConfigurableInputProps) {
     }
 
     // Filter for qualification matches only
+//    const match = matchData.find(
+//      m => m.comp_level === 'qm' && m.match_number === selectedMatchNumber,
+//    );
+
     const match = matchData.find(
-      m => m.comp_level === 'qm' && m.match_number === selectedMatchNumber,
+      m => m.key === selectedMatchNumber,
     );
 
     if (!match) return [];
 
     // Extract all team numbers from both alliances with their positions
     const teams: Array<{
-      teamNumber: number;
+      teamNumber: string;
       robotPosition: string;
       alliance: string;
       position: number;
@@ -63,8 +69,10 @@ export default function TBATeamAndRobotInput(props: ConfigurableInputProps) {
 
     // Red alliance teams
     match.alliances.red.team_keys.forEach((teamKey, index) => {
-      const teamNumber = parseInt(teamKey.substring(3));
-      if (!isNaN(teamNumber)) {
+      //const teamNumber = parseInt(teamKey.substring(3));
+      const teamNumber = teamKey.substring(3);
+      //if (!isNaN(teamNumber)) {
+      if (!isEmpty(teamNumber)) {
         teams.push({
           teamNumber,
           robotPosition: `R${index + 1}`,
@@ -76,8 +84,10 @@ export default function TBATeamAndRobotInput(props: ConfigurableInputProps) {
 
     // Blue alliance teams
     match.alliances.blue.team_keys.forEach((teamKey, index) => {
-      const teamNumber = parseInt(teamKey.substring(3));
-      if (!isNaN(teamNumber)) {
+      //const teamNumber = parseInt(teamKey.substring(3));
+      const teamNumber = teamKey.substring(3);
+      //if (!isNaN(teamNumber)) {
+      if (!isEmpty(teamNumber)) {
         teams.push({
           teamNumber,
           robotPosition: `B${index + 1}`,
@@ -113,7 +123,8 @@ export default function TBATeamAndRobotInput(props: ConfigurableInputProps) {
   const handleSelectChange = useCallback((selectedValue: string) => {
     const [teamNumber, robotPosition] = selectedValue.split('|');
     setValue({
-      teamNumber: parseInt(teamNumber),
+//      teamNumber: parseInt(teamNumber),
+      teamNumber: teamNumber,
       robotPosition,
     });
   }, []);
@@ -146,18 +157,19 @@ export default function TBATeamAndRobotInput(props: ConfigurableInputProps) {
   // Fall back to standard number input if no team options are available
   return (
     <Input
-      type="number"
+      type="text"
       value={value?.teamNumber || ''}
       id={data.title}
       onChange={e => {
-        const parsed = Number(e.target.value);
+//        const parsed = Number(e.target.value);
+        const parsed = e.target.value;
         if (e.target.value === '') {
           setValue(null);
           return;
         }
-        if (isNaN(parsed)) {
-          return;
-        }
+        // if (isNaN(parsed)) {
+        //   return;
+        // }
         setValue({
           teamNumber: parsed,
           robotPosition: '',

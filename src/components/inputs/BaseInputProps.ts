@@ -142,7 +142,7 @@ export const tbaTeamAndRobotInputSchema = inputBaseSchema.extend({
   type: z.literal('TBA-team-and-robot'),
   defaultValue: z
     .object({
-      teamNumber: z.number(),
+      teamNumber: z.string(),
       robotPosition: z.string(),
     })
     .nullable()
@@ -150,11 +150,18 @@ export const tbaTeamAndRobotInputSchema = inputBaseSchema.extend({
     .describe('The default team and robot position'),
 });
 
+// export const tbaMatchNumberInputSchema = inputBaseSchema.extend({
+//   type: z.literal('TBA-match-number'),
+//   min: z.number().optional().describe('The minimum value'),
+//   max: z.number().optional().describe('The maximum value'),
+//   defaultValue: z.number().default(0).describe('The default value'),
+// });
+
 export const tbaMatchNumberInputSchema = inputBaseSchema.extend({
   type: z.literal('TBA-match-number'),
-  min: z.number().optional().describe('The minimum value'),
-  max: z.number().optional().describe('The maximum value'),
-  defaultValue: z.number().default(0).describe('The default value'),
+  min: z.string().optional().describe('The minimum value'),
+  max: z.string().optional().describe('The maximum value'),
+  defaultValue: z.string().default('').describe('The default value'),
 });
 
 export const sectionSchema = z.object({
