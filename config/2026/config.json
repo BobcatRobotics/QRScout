@@ -75,6 +75,19 @@
           "defaultValue": ""
         },
         {
+          "title": "Current Round",
+          "description": "Which stage of the competition we are in.",
+          "type": "select",
+          "required": true,
+          "code": "CompType",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "QM": "Qualification",
+            "PM": "Playoffs"
+          }
+        },
+        {
           "title": "Match Number",
           "description": "Select the match number.",
           "type": "TBA-match-number",
@@ -84,7 +97,7 @@
           "defaultValue": ""
         },
         {
-          "title": "Team and Robot",
+          "title": "Team and Robot (IGNORE FOR PLAYOFFS)",
           "description": "Select the team and robot position you are scouting.",
           "type": "TBA-team-and-robot",
           "required": true,
@@ -99,7 +112,7 @@
           "required": true,
           "code": "startPos",
           "formResetBehavior": "reset",
-          "defaultValue": "H",
+          "defaultValue": "",
           "choices": {
             "1": "1",
             "2": "2",
@@ -116,7 +129,7 @@
           "required": false,
           "code": "fieldLayout",
           "formResetBehavior": "preserve",
-          "defaultValue": "https://i.imgur.com/XgLUU2O.jpeg",
+          "defaultValue": "https://i.imgur.com/ZqHmz0U.jpeg",
           "height": 300,
           "alt": "2026 FRC Field Layout Diagram"
         },
@@ -135,44 +148,6 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Climbed",
-          "description": "Did the robot climb during autonomous?",
-          "type": "select",
-          "required": false,
-          "code": "autoClimbed",
-          "formResetBehavior": "reset",
-          "defaultValue": "NA",
-          "choices": {
-            "NA": "Not Attempted",
-            "Success": "Successful Climb",
-            "Failed": "Unsuccessful Climb"
-          }
-        },
-        {
-          "title": "Where Climbed",
-          "description": "Where on the tower did the robot climb in autonomous?",
-          "type": "select",
-          "required": false,
-          "code": "autoClimbPos",
-          "formResetBehavior": "reset",
-          "defaultValue": "No",
-          "choices": {
-            "No": "No Climb",
-            "LS": "Left Side",
-            "MD": "Middle",
-            "RS": "Right Side"
-          }
-        },
-        {
-          "title": "Double Climbed in Auto",
-          "description": "Check if the robots Climbed with another robot in Auto.",
-          "type": "boolean",
-          "required": false,
-          "code": "doubleClimb",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
           "title": "Scored in Auto",
           "description": "Check if the robot scored in Auto.",
           "type": "boolean",
@@ -180,6 +155,15 @@
           "code": "AutoScored",
           "formResetBehavior": "reset",
           "defaultValue": false
+        },
+        {
+          "title": "Fuel Scored",
+          "description": "Approximate fuel scored during autonomous.",
+          "type": "multi-counter",
+          "required": false,
+          "code": "autoFuelScored",
+          "formResetBehavior": "reset",
+          "defaultValue": 0
         },
         {
           "title": "Scoring Locations",
@@ -219,6 +203,44 @@
             "H_Player": "Human Player Zone",
             "FLOOR": "Floor"
           }
+        },
+        {
+          "title": "Climbed",
+          "description": "Did the robot climb during autonomous?",
+          "type": "select",
+          "required": true,
+          "code": "autoClimbed",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "NA": "Not Attempted",
+            "Success": "Successful Climb",
+            "Failed": "Unsuccessful Climb"
+          }
+        },
+        {
+          "title": "Where Climbed",
+          "description": "Where on the tower did the robot climb in autonomous?",
+          "type": "select",
+          "required": true,
+          "code": "autoClimbPos",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "No": "No Climb",
+            "LS": "Left Side",
+            "MD": "Middle",
+            "RS": "Right Side"
+          }
+        },
+        {
+          "title": "Double (Buddy) Climbed in Auto",
+          "description": "Check if the robots Climbed with another robot in Auto.",
+          "type": "boolean",
+          "required": false,
+          "code": "doubleClimb",
+          "formResetBehavior": "reset",
+          "defaultValue": false
         }
       ]
     },
@@ -226,54 +248,29 @@
       "name": "Teleop",
       "fields": [
         {
-          "title": "+1 Fuel Scored (ESTIMATE)",
-          "type": "counter",
+          "title": "Fuel Scored",
+          "description": "Approximate fuel scored during teleop.",
+          "type": "multi-counter",
           "required": false,
-          "code": "fuel1",
+          "code": "teleopFuelScored",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
+          "defaultValue": 0
         },
         {
-          "title": "+5 Fuel Burst (ESTIMATE)",
-          "type": "counter",
-          "required": false,
-          "code": "fuel5",
+          "title": "Pickup Locations",
+          "description": "Fuel pickup TELEOP",
+          "type": "multi-select",
+          "required": true,
+          "code": "pickupTele",
           "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "+10 Fuel Burst (ESTIMATE)",
-          "type": "counter",
-          "required": false,
-          "code": "fuel10",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "+25 Fuel Dump (ESTIMATE)",
-          "type": "counter",
-          "required": false,
-          "code": "fuel25",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "+35 Fuel Dump (ESTIMATE)",
-          "type": "counter",
-          "required": false,
-          "code": "fuel35",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
+          "defaultValue": [],
+          "choices": {
+            "NONE": "No Pickup",
+            "DEPOT": "Depot",
+            "MID": "MidField",
+            "H_Player": "Human Player Zone",
+            "FLOOR": "Floor"
+          }
         },
         {
           "title": "% Scoring Effectiveness",
@@ -294,7 +291,7 @@
           "required": false,
           "code": "pickupEffe",
           "formResetBehavior": "reset",
-          "defaultValue": 3,
+          "defaultValue": 0,
           "min": 0,
           "max": 5,
           "step": 1
@@ -303,7 +300,7 @@
           "title": "Passed fuel during match?",
           "description": "Did the robot pass fuel during the match?",
           "type": "multi-select",
-          "required": false,
+          "required": true,
           "code": "fuelPassed",
           "formResetBehavior": "reset",
           "defaultValue": [],
@@ -322,7 +319,7 @@
           "required": false,
           "code": "passingEffe",
           "formResetBehavior": "reset",
-          "defaultValue": 3,
+          "defaultValue": 0,
           "min": 0,
           "max": 5,
           "step": 1
@@ -340,14 +337,14 @@
           "title": "Played Defense?",
           "description": "Did the robot play defense during the match?",
           "type": "select",
-          "required": false,
+          "required": true,
           "code": "robotDefended",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "",
           "choices": {
             "Yes": "Yes",
             "No": "No",
-            "Attempt": "Attempted"
+            "Attempted": "Attempted"
           }
         },
         {
@@ -357,7 +354,7 @@
           "required": false,
           "code": "defenceEffe",
           "formResetBehavior": "reset",
-          "defaultValue": 3,
+          "defaultValue": 0,
           "min": 0,
           "max": 5,
           "step": 1
@@ -374,7 +371,7 @@
           "required": true,
           "code": "climbed",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "",
           "choices": {
             "No": "No Climb",
             "L1": "Level 1",
@@ -387,10 +384,10 @@
           "title": "Where Climbed",
           "description": "Where on the tower did the robot climb?",
           "type": "select",
-          "required": false,
+          "required": true,
           "code": "climbPos",
           "formResetBehavior": "reset",
-          "defaultValue": "No",
+          "defaultValue": "",
           "choices": {
             "No": "No Climb",
             "LS": "Left Side",
