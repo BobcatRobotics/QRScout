@@ -75,19 +75,6 @@
           "defaultValue": ""
         },
         {
-          "title": "Current Round",
-          "description": "Which stage of the competition we are in.",
-          "type": "select",
-          "required": true,
-          "code": "CompType",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "QM": "Qualification",
-            "PM": "Playoffs"
-          }
-        },
-        {
           "title": "Match Number",
           "description": "Select the match number.",
           "type": "TBA-match-number",

@@ -209,6 +209,75 @@ For example, in a game where robots can score in multiple locations, you might c
 
 This allows scouts to quickly record all locations where a robot successfully scored during a match.
 
+### Using Multi-Counter Input
+
+The multi-counter input type provides a quick-tap counter with multiple increment sizes. Instead of tapping +1 repeatedly, scouts can tap +1, +5, or +10 (and their negative counterparts) to rapidly approximate large counts. A prominent running tally confirms each press took effect.
+
+#### Configuration in config.json
+
+```json
+{
+  "title": "Fuel Scored",
+  "type": "multi-counter",
+  "required": false,
+  "code": "fuelScored",
+  "description": "Approximate fuel scored during the match",
+  "formResetBehavior": "reset",
+  "defaultValue": 0
+}
+```
+
+#### Multi-Counter Properties
+
+- **defaultValue**: The initial value of the counter (typically 0).
+
+#### Using Multi-Counter in the Form
+
+The multi-counter displays:
+
+1. **Running Tally**: A large number at the top showing the current count
+2. **Subtract Row**: Three buttons (−1, −5, −10) for correcting mistakes
+3. **Add Row**: Three buttons (+1, +5, +10) for incrementing the count
+
+The value is floored at 0 — it cannot go negative.
+
+Button feedback uses `active:` styling rather than `hover:` to avoid the sticky highlight issue common on touch devices (Android tablets, iPads).
+
+#### Data Format
+
+In the generated QR code, the multi-counter stores a single integer value representing the current tally. For example, if a scout tapped +10 three times and −1 twice, the QR code will contain `28`.
+
+#### FRC Scouting Examples
+
+Multi-counter is particularly useful for FRC scouting in scenarios where quantities are large and exact precision isn't critical:
+
+- **Fuel/Game Piece Counting**: Quickly approximate how many game pieces a robot scored when individual counting would be too slow
+- **Cycle Counting**: Track approximate number of cycles across a match
+- **Points Estimation**: Rough point tallying during a match
+
+For example, to track fuel scored during autonomous:
+
+```json
+{
+  "title": "Auto Fuel Scored",
+  "type": "multi-counter",
+  "required": false,
+  "code": "autoFuelScored",
+  "description": "Approximate fuel scored during autonomous",
+  "formResetBehavior": "reset",
+  "defaultValue": 0
+}
+```
+
+This allows scouts to quickly tap +5 or +10 as game pieces stream in, rather than trying to count each one individually. The subtract buttons let them correct if they overshoot.
+
+#### Best Practices for Multi-Counter
+
+1. **Set Expectations**: Make sure scouts understand the count is a ballpark estimate, not an exact tally
+2. **Use for High-Volume Counts**: Reserve this input for scenarios where counts are large enough that +1 tapping would be impractical
+3. **Pair with Action Tracker**: For more precise timing data, combine with an action-tracker that records when scoring bursts happen
+4. **Practice Before Competition**: Have scouts practice with the +5/+10 buttons to build muscle memory
+
 ### Using Image Input
 
 The image input type allows you to display static images in your scouting form. This is useful for showing field layouts, robot diagrams, game piece locations, or any visual reference that helps scouts accurately record data.
