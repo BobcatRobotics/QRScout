@@ -81,7 +81,7 @@
           "required": true,
           "code": "matchNumber",
           "formResetBehavior": "increment",
-          "defaultValue": 1
+          "defaultValue": ""
         },
         {
           "title": "Team and Robot",
