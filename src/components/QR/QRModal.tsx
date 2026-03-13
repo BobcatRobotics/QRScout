@@ -33,7 +33,7 @@ export function QRModal(props: QRModalProps) {
   }
 
   // Special handling for teamAndRobot field
-  if (f.id === 'teamAndRobot') {
+  if (f.code === 'teamAndRobot') {
     return v?.teamNumber ?? '';
   }
 
