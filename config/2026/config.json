@@ -101,12 +101,12 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
-            "1": "1",
+            "1": "Depot Side",
             "2": "2",
-            "3": "3",
+            "3": "Outpost Side",
             "4": "4",
-            "5": "5",
-            "6": "6"
+            "5": "Outpost Side",
+            "6": "Depot Side"
           }
         },
         {
@@ -228,6 +228,17 @@
           "code": "doubleClimb",
           "formResetBehavior": "reset",
           "defaultValue": false
+        },
+        {
+          "title": "Auto Path (Near trench or near bump, path it takes, number of cycles)",
+          "description": "Eg: Penalties/Defense/Uniqueness, etc.",
+          "type": "text",
+          "required": true,
+          "code": "co",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "min": 0,
+          "max": 2500
         }
       ]
     },
@@ -254,9 +265,9 @@
           "choices": {
             "NONE": "No Pickup",
             "DEPOT": "Depot",
-            "MID": "MidField",
+            "MID": "MidField Floor",
             "H_Player": "Human Player Zone",
-            "FLOOR": "Floor"
+            "A_ZONE": "Alliance Zone Floor"
           }
         },
         {
@@ -296,7 +307,8 @@
             "Center": "Center",
             "Opp_Zone": "Opp Zone",
             "Scattered": "Scattered",
-            "Intentional": "Intentional"
+            "Intentional": "Intentional",
+            "Bumper": "Bumper Passing"
           }
         },
         {
