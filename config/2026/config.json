@@ -238,7 +238,7 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
-          "max": 2500
+          "max": 500
         }
       ]
     },
@@ -451,7 +451,7 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
-          "max": 2500
+          "max": 750
         }
       ]
     }
