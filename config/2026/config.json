@@ -186,9 +186,9 @@
           "choices": {
             "NONE": "No Pickup",
             "DEPOT": "Depot",
-            "MID": "MidField",
+            "MID": "MidField Floor",
             "H_Player": "Human Player Zone",
-            "FLOOR": "Floor"
+            "A_ZONE": "Alliance Zone Floor"
           }
         },
         {
