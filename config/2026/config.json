@@ -101,12 +101,12 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
-            "1": "1",
+            "1": "1 (Depot Side)",
             "2": "2",
-            "3": "3",
-            "4": "4",
+            "3": "3 (Outpost Side)",
+            "4": "4 (Outpost Side)",
             "5": "5",
-            "6": "6"
+            "6": "6 (Depot Side)"
           }
         },
         {
@@ -116,7 +116,7 @@
           "required": false,
           "code": "fieldLayout",
           "formResetBehavior": "preserve",
-          "defaultValue": "https://i.imgur.com/ZqHmz0U.jpeg",
+          "defaultValue": "https://i.imgur.com/3znfFhr.jpeg",
           "height": 300,
           "alt": "2026 FRC Field Layout Diagram"
         },
@@ -153,10 +153,10 @@
           "defaultValue": 0
         },
         {
-          "title": "Scoring Locations",
+          "title": "How Scored",
           "type": "select",
           "required": true,
-          "code": "scoringLocations",
+          "code": "scoringMannerismAuto",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -186,9 +186,9 @@
           "choices": {
             "NONE": "No Pickup",
             "DEPOT": "Depot",
-            "MID": "MidField Floor",
+            "MID": "MidField",
             "H_Player": "Human Player Zone",
-            "A_ZONE": "Alliance Zone Floor"
+            "FLOOR": "Floor"
           }
         },
         {
@@ -230,15 +230,27 @@
           "defaultValue": false
         },
         {
-          "title": "Auto Path (Near trench or near bump, path it takes, number of cycles)",
-          "description": "Eg: Penalties/Defense/Uniqueness, etc.",
-          "type": "text",
+          "title": "Auto Path",
+          "type": "select",
           "required": true,
-          "code": "aco",
+          "code": "AutoPath",
           "formResetBehavior": "reset",
           "defaultValue": "",
-          "min": 0,
-          "max": 500
+          "choices": {
+            "Bump/Bump": "Bump to Bump (sweep)",
+            "Trench/Trench": "Trench to Trench (sweep)",
+            "Bump-Trench": "Bump to Trench (sweep)",
+            "Trench-Bump": "Trench to Bump (sweep)",
+            "Pre-Load": "Shoot Pre-Load Only",
+            "Depot": "Straight to Depot",
+            "Outpost": "Straight to Outpost",
+            "Same Side Bump": "Bump to Bump (Same Side)",
+            "Same Side Trench": "Trench to Trench (Same Side)",
+            "Same Side Bump/Trench": "Trench to Bump (Same Side)",
+            "Same Side Trench/Bump": "Bump to Trench (Same Side)",
+            "Climb": "Climb Only",
+            "N/A": "Did not do anything"
+          }
         }
       ]
     },
@@ -265,9 +277,9 @@
           "choices": {
             "NONE": "No Pickup",
             "DEPOT": "Depot",
-            "MID": "MidField Floor",
+            "MID": "MidField",
             "H_Player": "Human Player Zone",
-            "A_ZONE": "Alliance Zone Floor"
+            "FLOOR": "Floor"
           }
         },
         {
@@ -281,6 +293,20 @@
           "min": 0,
           "max": 100,
           "step": 20
+        },
+        {
+          "title": "How Scored",
+          "type": "select",
+          "required": true,
+          "code": "scoringMannerismTele",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "NONE": "No Scoring",
+            "STATIONARY": "While Stationary",
+            "WHILE_DRIVE": "While Driving",
+            "BOTH": "Both"
+          }
         },
         {
           "title": "Pickup Effectiveness",
@@ -307,8 +333,7 @@
             "Center": "Center",
             "Opp_Zone": "Opp Zone",
             "Scattered": "Scattered",
-            "Intentional": "Intentional",
-            "Bumper": "Bumper Passing"
+            "Intentional": "Intentional"
           }
         },
         {
@@ -451,7 +476,7 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
-          "max": 750
+          "max": 2500
         }
       ]
     }
