@@ -110,20 +110,6 @@
           }
         },
         {
-          "title": "Near Trench, Near Bump, or Near Hub",
-          "description": "The accurate starting position of the robot.",
-          "type": "select",
-          "required": true,
-          "code": "startPostTorB",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "Near Trench": "Near trench",
-            "Near Bump": "Near Bump",
-            "Near Hub": "Near hub"
-          }
-        },
-        {
           "title": "Field Layout",
           "description": "Reference diagram of the field",
           "type": "image",
@@ -223,7 +209,7 @@
           "title": "Where Climbed",
           "description": "Where on the tower did the robot climb in autonomous?",
           "type": "select",
-          "required": true,
+          "required": false,
           "code": "autoClimbPos",
           "formResetBehavior": "reset",
           "defaultValue": "",
@@ -245,11 +231,11 @@
         },
         {
           "title": "Auto Path",
-          "type": "select",
+          "type": "multi-select",
           "required": true,
           "code": "AutoPath",
           "formResetBehavior": "reset",
-          "defaultValue": "",
+          "defaultValue": [],
           "choices": {
             "Bump/Bump": "Bump to Bump (sweep)",
             "Trench/Trench": "Trench to Trench (sweep)",
@@ -265,41 +251,6 @@
             "Climb": "Climb Only",
             "N/A": "Did not do anything"
           }
-        },
-        {
-          "title": "Autonomous Shooting Locations",
-          "type": "multi-select",
-          "required": true,
-          "code": "Autosl",
-          "formResetBehavior": "reset",
-          "defaultValue": [],
-          "choices": {
-            "LSH/Depot": "Left side Hub at Depot",
-            "LSH/Middle": "Left side Hub, middle of hub and Depot",
-            "LSH/Hub": "Left side Hub at Hub",
-            "LSH/Trench": "Left side Hub at Trench",
-            "LSH/Bump": "Left side Hub at Bump",
-            "Pre-Load Middle": "Shoot Pre-Load Only - Middle Hub",
-            "Pre-Load LSH": "Shoot Pre-Load Only - Left Side Hub",
-            "Pre-Load RSH": "Shoot Pre-Load Only - Right Side Hub",
-            "RSH/Outpost": "Right side Hub at Outpost",
-            "RSH/Middle": "Right side Hub, middle of hub and Outpost",
-            "RSH/Hub": "Right side Hub at Hub",
-            "RSH/Trench": "Right side Hub at Trench",
-            "RSH/Bump": "Right side Hub at Bump",
-            "CO": "Climb only",
-            "N?A": "Did not do anything"
-          }
-        },
-        {
-          "title": "Auto Path Comments",
-          "type": "text",
-          "required": true,
-          "code": "Aco",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "min": 0,
-          "max": 750
         }
       ]
     },
