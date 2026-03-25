@@ -251,6 +251,42 @@
             "Climb": "Climb Only",
             "N/A": "Did not do anything"
           }
+        },
+        {
+          "title": "Auto Shooting Locations",
+          "type": "multi-select",
+          "required": true,
+          "code": "AutoSL",
+          "formResetBehavior": "reset",
+          "defaultValue": [],
+          "choices": {
+            "LSH/Depot": "Left side hub near Depot",
+            "LSH/Middle": "Left side hub in the middle of hub and Depot",
+            "LSH/Hub": "Left side hub near hub",
+            "LSH/Bump": "Left side hub near bump",
+            "LSH/Trench": "Left side hub near trench",
+            "Trench-Bump": "Trench to Bump (sweep)",
+            "MH/Hub": "Middle hub near hub",
+            "MH/Middle": "Middle hub in the middle of hub and Tower",
+            "MH/Tower": "Middle hub near Tower",
+            "RSH/Outpost": "Right side hub near Outpost",
+            "RSH/Middle": "Right side hub in the middle of hub and Outpost",
+            "RSH/Hub": "Right side hub near hub",
+            "RSH/Bump": "Right side hub near bump",
+            "RSH/Trench": "Right side hub near trench",
+            "Climb": "Climb Only",
+            "N/A": "Did not do anything"
+          }
+        },
+        {
+          "title": "Auto Comments (If their path isn't mentioned in Auto Path)",
+          "type": "text",
+          "required": false,
+          "code": "Aco",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "min": 0,
+          "max": 750
         }
       ]
     },
