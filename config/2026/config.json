@@ -116,7 +116,7 @@
           "required": false,
           "code": "fieldLayout",
           "formResetBehavior": "preserve",
-          "defaultValue": "https://i.imgur.com/3znfFhr.jpeg",
+          "defaultValue": "https://i.imgur.com/ep25ncm.jpeg",
           "height": 300,
           "alt": "2026 FRC Field Layout Diagram"
         },
@@ -444,7 +444,7 @@
           "title": "Where Climbed",
           "description": "Where on the tower did the robot climb?",
           "type": "select",
-          "required": true,
+          "required": false,
           "code": "climbPos",
           "formResetBehavior": "reset",
           "defaultValue": "",
