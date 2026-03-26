@@ -253,10 +253,10 @@
           }
         },
         {
-          "title": "Auto Shooting Locations",
+          "title": "Tele Shooting Locations",
           "type": "multi-select",
           "required": true,
-          "code": "AutoSL",
+          "code": "TeleSL",
           "formResetBehavior": "reset",
           "defaultValue": [],
           "choices": {
