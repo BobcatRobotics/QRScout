@@ -101,12 +101,12 @@
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
-            "Red Depot": "1 (Depot Side)",
-            "Red Middle": "2",
-            "Red Outpost": "3 (Outpost Side)",
-            "Blue Outpost": "4 (Outpost Side)",
-            "Blue Middle": "5",
-            "Blue Depot": "6 (Depot Side)"
+            "1": "1 (Depot Side)",
+            "2": "2",
+            "3": "3 (Outpost Side)",
+            "4": "4 (Outpost Side)",
+            "5": "5",
+            "6": "6 (Depot Side)"
           }
         },
         {
